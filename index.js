@@ -5,8 +5,15 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 
-const dbURL = `mongodb+srv://Adnan:LPL1MheB0B4bsCvg@cluster0.mpobb6h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-connectDB(dbURL)
+const dbURL = `mongodb+srv://Adnan:LPL1MheB0B4bsCvg@cluster0.mpobb6h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`; connectDB(dbURL)
+.then(() => {
+  console.log(`Connected to MongoDB at ${dbURL}`);
+  console.log(`Server is up and running on http://localhost:${port}`);
+})
+.catch((error) => {
+  console.error("Failed to connect to MongoDB:", error);
+  process.exit(1); // Exit the process if MongoDB connection fails
+});
 
 const port = process.env.PORT || 3000;
 
