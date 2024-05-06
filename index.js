@@ -15,6 +15,11 @@ const dbURL = `mongodb+srv://Adnan:LPL1MheB0B4bsCvg@cluster0.mpobb6h.mongodb.net
   process.exit(1); // Exit the process if MongoDB connection fails
 });
 
+app.get('/' , (req , res)=>{
+  res.send('hello from simple server from hove index.js')
+})
+
+
 const port = process.env.PORT || 3000;
 
  app.listen( port, ()=> {
