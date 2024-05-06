@@ -7,11 +7,7 @@ const participantRoutes = require("./routes/participantRoute")
 
 
 
-
-
-
-// Middlewares
-app.use(express.json()); // Parse incoming JSON data
+app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({extended:true}));
 
